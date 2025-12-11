@@ -1,29 +1,27 @@
 function memoize(fn)
 {
-    const cache = new Map();  // cache রাখা হবে এখানে
-  let callCount = 0;        // function কয়বার আসলে চলেছে, সেটা গুনবো
+    const cache = new Map();
+  let callCount = 0;
 
   const memoizedFn = (...args) => {
-    const key = JSON.stringify(args); // input গুলোকে unique string বানিয়ে key বানানো হচ্ছে
+    const key = JSON.stringify(args);
 console.log('key is', key)
     if (cache.has(key)) {
       console.log('cache hit in if condition')
       console.log('cache in if condition and the memorize value is  is ', cache.get(key))
-      return cache.get(key); // আগের result থাকলে cache থেকে return
+      return cache.get(key);
     }
 
 console.log('all storage cache are', cache)
-    const result = fn(...args); // নতুন হলে আসল function call
-    cache.set(key, result);     // result cache করে রাখলাম
+    const result = fn(...args);
+    cache.set(key, result);
     callCount++;
-    console.log("callCount is ",callCount)             // আসল function call হয়েছে, তাই বাড়ালাম
+    console.log("callCount is ",callCount)
     return result;
   };
 
-  // একটা method যোগ করলাম call count পাওয়ার জন্য
+
   memoizedFn.getCallCount = () => callCount;
-
-
   return memoizedFn;
 }
 
