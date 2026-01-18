@@ -16,7 +16,7 @@ public:
                 result.push_back("Buzz");
             } else {
                 // Convert the number to a string if none of the conditions are met
-                result.push_back(std::to_string(i));
+                result.push_back(to_string(i));
             }
         }
         
