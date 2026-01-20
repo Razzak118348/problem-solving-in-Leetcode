@@ -25,5 +25,7 @@ int pivotIndex(vector<int>& nums) {
 int main() {
     vector<int> nums = {1,7,3,6,5,6};
     cout << pivotIndex(nums) << endl;
+    vector<int> nums2= {1,2,3};
+    cout <<pivotIndex(nums2)<<endl;
     return 0;
 }
