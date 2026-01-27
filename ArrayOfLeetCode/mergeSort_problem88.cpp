@@ -13,9 +13,11 @@ public:
         while (i >= 0 && j >= 0) {
             if (nums1[i] > nums2[j]) {
                 nums1[k] = nums1[i];
+                cout<< "Placing " << nums1[i] << " from nums1 at index " << k << endl;
                 i--;
             } else {
                 nums1[k] = nums2[j];
+                cout<< "Placing " << nums2[j] << " from nums2 at index " << k << endl;
                 j--;
             }
             k--;
@@ -24,6 +26,7 @@ public:
         // If nums2 still has elements left that need to be merged
         while (j >= 0) {
             nums1[k] = nums2[j];
+            cout<< "Placing " << nums2[j] << " from nums2 at index " << k << endl;
             j--;
             k--;
         }
