@@ -26,7 +26,7 @@ public:
         // If nums2 still has elements left that need to be merged
         while (j >= 0) {
             nums1[k] = nums2[j];
-            cout<< "Placing " << nums2[j] << " from nums2 at index " << k << endl;
+
             j--;
             k--;
         }
