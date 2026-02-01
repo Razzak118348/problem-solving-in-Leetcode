@@ -5,7 +5,7 @@ int main() {
     int house = 10;
 // home = Variable
 
-//  address of home = Address =>
+//  address of home = Address => &
 
 //  the address which is writen in a paper is = Pointer => *
 
