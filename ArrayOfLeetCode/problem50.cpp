@@ -34,5 +34,10 @@ if(x==-1 & n%2!=0) return -1.0;
 };
 
 int main(){
+    Solution sol;
+    double x=3.00000;
+    int n=10;
+    double ans = sol.myPow(x,n);
+    cout<<ans;
 
 }
