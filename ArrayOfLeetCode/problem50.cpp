@@ -39,5 +39,4 @@ int main(){
     int n=10;
     double ans = sol.myPow(x,n);
     cout<<ans;
-
 }
