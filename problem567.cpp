@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 
@@ -57,19 +57,21 @@ int main()
         string s1, s2;
         cout << "Enter first string: ";
         cin >> s1;
+        cout<<endl;
         cout << "Enter second string: ";
         cin >> s2;
+        cout<<endl;
 
         Solution obj;
         bool result = obj.checkInclusion(s1, s2);
 
         if (result)
         {
-            cout << "s2 contains a permutation of s1." << endl;
+            cout << "s2 contains a permutation of s1. True" << endl;
         }
         else
         {
-            cout << "s2 does not contain a permutation of s1." << endl;
+            cout << "s2 does not contain a permutation of s1. False" << endl;
         }
 
         return 0;
