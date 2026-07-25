@@ -55,7 +55,7 @@ public:
         else
         {
             cout << endl;
-            cout << "push back" << " " << newNode->data;
+            cout << "push back in last position " << " " << newNode->data;
             tail->next = newNode;
             tail = newNode;
         }
@@ -73,7 +73,7 @@ public:
             Node *temp = head;
             head = head->next;
             cout<<endl;
-            cout<<"Pop front "<<temp->data;
+            cout<<"Pop front the head data "<<temp->data;
             temp->next = NULL;
             delete temp;
         }
@@ -95,10 +95,31 @@ public:
 
         temp -> next =NULL;
         cout<<endl;
-        cout<<"pop back "<<tail->data;
+        cout<<"pop back the tail data "<<tail->data;
         delete tail;
         tail=temp;//reassaign new tail
     }
+
+void insert(int val , int pos){
+
+    if(pos<0){
+        cout<<"invalid position \n";
+        return;
+    }
+    if(pos==0){
+        push_front(val);
+        return;
+    }
+    Node* temp =head;
+    for(int i=0;i<pos-1;i++){
+        temp =temp->next;
+    }
+    Node* newNode = new Node(val);
+    newNode->next = temp->next; // new node ke position er node er sathe connect kora
+    cout<<"new node insert position at "<<pos << " index " <<"and value is :  "<<val<<endl;
+    temp->next =newNode; //current temp ke newnode e assign kora
+}
+
     void PrintList()
     {
         cout << endl;
@@ -120,13 +141,18 @@ int main()
     l1.push_front(3);
     l1.push_front(5);
     l1.push_front(9);
+    l1.push_front(10);
 
     l1.push_back(4);
     l1.PrintList();
 
     l1.Pop_front();
     l1.PrintList();
+
     l1.Pop_back();
+    l1.PrintList();
+
+    l1.insert(7,3);
     l1.PrintList();
 }
 
