@@ -72,20 +72,32 @@ public:
         {
             Node *temp = head;
             head = head->next;
+            cout<<endl;
+            cout<<"Pop front "<<temp->data;
             temp->next = NULL;
             delete temp;
         }
     }
 
-    void Pop_back(){
-         if (head == NULL)
+    void Pop_back()
+    {
+        if (head == NULL)
         {
             cout << "can not pop value from empty list";
             return;
         }
-        else{
 
-        }
+            Node *temp = head;
+            while (temp->next != tail)
+            {
+                temp = temp->next;
+            }
+
+        temp -> next =NULL;
+        cout<<endl;
+        cout<<"pop back "<<tail->data;
+        delete tail;
+        tail=temp;//reassaign new tail
     }
     void PrintList()
     {
@@ -95,6 +107,7 @@ public:
         {
             cout << temp->data << "->";
             temp = temp->next;
+
         }
         cout << "NULL" << endl;
     }
@@ -109,9 +122,11 @@ int main()
     l1.push_front(9);
 
     l1.push_back(4);
+    l1.PrintList();
 
     l1.Pop_front();
-
+    l1.PrintList();
+    l1.Pop_back();
     l1.PrintList();
 }
 
