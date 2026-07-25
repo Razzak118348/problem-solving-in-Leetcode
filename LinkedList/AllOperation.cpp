@@ -120,6 +120,20 @@ void insert(int val , int pos){
     temp->next =newNode; //current temp ke newnode e assign kora
 }
 
+
+int Search(int key){
+    Node* temp =head;
+   int idx=0;
+  while(temp != NULL){
+    if(temp->data==key){
+        return idx;
+    }
+    temp = temp->next;
+    idx++;
+
+  }
+  return -1;
+}
     void PrintList()
     {
         cout << endl;
@@ -154,6 +168,8 @@ int main()
 
     l1.insert(7,3);
     l1.PrintList();
+
+   cout<<"the index is "<<l1.Search(7);;
 }
 
 /*
