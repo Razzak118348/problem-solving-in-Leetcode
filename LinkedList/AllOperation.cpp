@@ -1,8 +1,5 @@
-
-
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 class Node
@@ -169,7 +166,8 @@ int main()
     l1.insert(7,3);
     l1.PrintList();
 
-   cout<<"the index is "<<l1.Search(7);;
+   cout<<"the searching value index is "<<l1.Search(7)<<endl;
+   cout<<"the searching value index is "<<l1.Search(10)<<endl;
 }
 
 /*
